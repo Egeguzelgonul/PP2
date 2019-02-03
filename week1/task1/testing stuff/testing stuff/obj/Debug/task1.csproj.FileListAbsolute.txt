@@ -1,0 +1,7 @@
+C:\Users\asus\Desktop\Üni\PP2\week1\task1\testing stuff\testing stuff\bin\Debug\testing stuff.exe.config
+C:\Users\asus\Desktop\Üni\PP2\week1\task1\testing stuff\testing stuff\bin\Debug\testing stuff.exe
+C:\Users\asus\Desktop\Üni\PP2\week1\task1\testing stuff\testing stuff\bin\Debug\testing stuff.pdb
+C:\Users\asus\Desktop\Üni\PP2\week1\task1\testing stuff\testing stuff\obj\Debug\task1.csprojAssemblyReference.cache
+C:\Users\asus\Desktop\Üni\PP2\week1\task1\testing stuff\testing stuff\obj\Debug\task1.csproj.CoreCompileInputs.cache
+C:\Users\asus\Desktop\Üni\PP2\week1\task1\testing stuff\testing stuff\obj\Debug\testing stuff.exe
+C:\Users\asus\Desktop\Üni\PP2\week1\task1\testing stuff\testing stuff\obj\Debug\testing stuff.pdb

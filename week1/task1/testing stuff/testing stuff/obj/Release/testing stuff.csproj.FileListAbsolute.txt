@@ -1,0 +1,6 @@
+C:\Users\asus\Desktop\Üni\PP2\week1\testing\testing stuff\testing stuff\bin\Release\testing stuff.exe.config
+C:\Users\asus\Desktop\Üni\PP2\week1\testing\testing stuff\testing stuff\bin\Release\testing stuff.exe
+C:\Users\asus\Desktop\Üni\PP2\week1\testing\testing stuff\testing stuff\bin\Release\testing stuff.pdb
+C:\Users\asus\Desktop\Üni\PP2\week1\testing\testing stuff\testing stuff\obj\Release\testing stuff.csproj.CoreCompileInputs.cache
+C:\Users\asus\Desktop\Üni\PP2\week1\testing\testing stuff\testing stuff\obj\Release\testing stuff.exe
+C:\Users\asus\Desktop\Üni\PP2\week1\testing\testing stuff\testing stuff\obj\Release\testing stuff.pdb
