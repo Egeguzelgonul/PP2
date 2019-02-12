@@ -12,14 +12,14 @@ namespace task1
     {
         static void Main(string[] args)
         {
-            StreamReader sr = new StreamReader("readthis.txt");
+            StreamReader sr = new StreamReader("readthis.txt"); //declaring the name of the input file
 
-            string line = "";
+            string line = ""; //empty string for now
 
-            line = sr.ReadLine();
+            line = sr.ReadLine(); //empty string is a string from the input file
 
-            Console.WriteLine(line);
-            if (GetStatus(line))
+            Console.WriteLine(line); //input whatever was in the input file
+            if (GetStatus(line)) //applying boolean function to test out is it palindrome or not
             {
                 Console.WriteLine("Palindrome");
             }
@@ -29,7 +29,7 @@ namespace task1
             }
         }
 
-        private static bool GetStatus(string line)
+        private static bool GetStatus(string line) //function to check if its palindrome or not
         {
             string first = line.Substring(0, line.Length / 2);
             char[] arr = line.ToCharArray();
@@ -39,7 +39,7 @@ namespace task1
             string temp = new string(arr);
             string second = temp.Substring(0, temp.Length / 2);
 
-            return first.Equals(second);
+            return first.Equals(second); //if reverse = original, it's palindrome!
         }
     }
 

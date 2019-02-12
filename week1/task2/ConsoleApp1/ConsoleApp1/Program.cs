@@ -1,33 +1,49 @@
 ﻿using System;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace BoxApplication
 {
-    public class Student
+    public class Student //Declaring a class and giving its properties
     {
-        public string name;   // Length of a box
-        public string id;  // Breadth of a box
-        public string yearofstudy;   // Height of a box
+        public string name = "Ege Güzelgönül";   // name
+        public string id = "777";  // ID
+        public int yearofstudy = 1;   // year of study
     }
     class Boxtester
     {
         static void Main(string[] args)
         {
-            Student Student1 = new Student();   // Declare Box1 of type Box
-            Student Student2 = new Student();   // Declare Box2 of type Box
-            double volume = 0.0;    // Store the volume of a box here
+            Student defau = new Student(); //declaring class to be able access it later
+            Console.WriteLine("To begin, hit 1");
+            int n = Convert.ToInt32(Console.ReadLine()); //this is just a pointless integer to begin the program with
 
-            // box 1 specification
-            Student1.name = "Ege Güzelgönül";
-            Student1.id = "BlablablaMYID";
-            Student1.yearofstudy = "1";
+                Console.WriteLine("Please enter the new student's name"); //Asking about this new student step by step
+                defau.name = Console.ReadLine(); // HERE GOES THE INPUT (LEEEEEROOOOY JENKINS!)
+                Console.WriteLine("Please enter the new student's ID");
+                defau.id = Console.ReadLine();
+                Console.WriteLine("Please enter the new student's year of study");
+                defau.yearofstudy = Convert.ToInt32(Console.ReadLine());
 
-            // box 2 specification
-            Student2.name = "Remzi";
-            Student2.id = "IDK what is my id?";
-            Student2.yearofstudy = "9000";
+                Console.WriteLine("If you want to display the name of the current student, hit 1"); // Not practical, but working method of accessing info (Hey, as long as it works!)
+                Console.WriteLine("If you want to display the ID of the current student, hit 2");
+                Console.WriteLine("If you want to display the year of study of the current student, hit 3");
+                Console.WriteLine("If you want to end the program, hit any key");
+                int m = Convert.ToInt32(Console.ReadLine()); //determining the thing that the user wants to know
 
-            Console.WriteLine("Enter The");
+                if (m == 1) //output will be given depending on the input
+                {
+                    Console.WriteLine(defau.name);
+                }
 
+                if (m == 2)
+                {
+                    Console.WriteLine(defau.id);
+                }
+
+                if (m == 3)
+                {
+                    Console.WriteLine(defau.yearofstudy);
+                }   
         }
     }
 }
