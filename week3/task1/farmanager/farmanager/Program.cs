@@ -87,6 +87,63 @@ namespace Ex1
                         sz--;
         }
 
+        public void Del()
+        {
+            if (currentFs.GetType() == typeof(DirectoryInfo)) // Everytime we get inside a directory, cursor is always at the top
+            {
+                cursor = 0;
+                Directory.Delete(currentFs.FullName);
+            }
+            else
+            {
+                cursor = 0;
+                File.Delete(currentFs.FullName);
+            }
+        }
+
+        public void Intxt()
+        {
+            //if (currentFs.GetType() == typeof(DirectoryInfo))
+            //{
+            Console.WriteLine("*******************BEEP_BOOP_I_AM_A_TEXT_FILE*******************"); //outputing the line
+
+            string line = ""; //empty string for now
+
+            line = File.ReadAllText(currentFs.FullName);
+
+                Console.WriteLine(line);
+            Console.WriteLine("*******************PRESS_ANY_KEY_TO_PROCEED*******************"); //outputing the line
+
+            Console.ReadKey();
+            //}
+        }
+
+        public void Renamer()
+        {
+            if (currentFs.GetType() == typeof(DirectoryInfo))
+            {
+                string line = Console.ReadLine(); //empty string for now
+
+                String parentti = path;
+                Console.WriteLine(parentti);
+                line = parentti + "/" + line;
+                System.IO.Directory.Move(currentFs.FullName, line);
+                Console.WriteLine(line);
+                Console.ReadKey();
+            }
+            else
+            {
+            string pusan = Console.ReadLine(); //empty string for now
+
+                String parentti = path;
+                Console.WriteLine(parentti);
+                pusan = parentti + "/" + pusan;
+                System.IO.File.Move(currentFs.FullName, pusan);
+                Console.WriteLine(pusan);
+            Console.ReadKey();
+            }
+        }
+
         public void Start()
         {
             ConsoleKeyInfo consoleKey = Console.ReadKey();
@@ -122,6 +179,12 @@ namespace Ex1
                     cursor = 0;
                     path = directory.Parent.FullName; //returns folder to its parent(previous folder)
                 }
+                if (consoleKey.Key == ConsoleKey.Delete) // if user presses up, up function plays
+                    Del();
+                if (consoleKey.Key == ConsoleKey.Spacebar) // if user presses up, up function plays
+                    Intxt();
+                if (consoleKey.Key == ConsoleKey.X) // if user presses up, up function plays
+                    Renamer();
             }
         }
 
@@ -131,7 +194,7 @@ namespace Ex1
     {
         static void Main(string[] args)
         {
-            string path = "/Users/asus/desktop/Üni/PP2";
+            string path = "/Users/asus/desktop/Üni/PP2/trash";
             FarManager farManager = new FarManager(path);
             farManager.Start();
         }

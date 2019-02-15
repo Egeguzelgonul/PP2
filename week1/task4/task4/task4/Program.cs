@@ -15,7 +15,7 @@ namespace testing_stuff
 
             for (int i = 0; i < n; i++) //cycle for the number of rows in total
             {
-                for (int j = -1; j < i; j++) //second cycle which always repeats itself as much as there is current "i", example: i = 3, 3 = number of stars printed
+                for (int j = 0; j <= i; j++) //second cycle which always repeats itself as much as there is current "i", example: i = 3, 3 = number of stars printed
                 {
                     Console.Write("[*]"); //simply printing one star
                 }
