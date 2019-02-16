@@ -11,6 +11,8 @@ namespace Ex1
         public bool ok;
         DirectoryInfo directory = null;
         FileSystemInfo currentFs = null;
+        public int numberoffiles = 0;
+        public int numberoffolders = 0;
 
         public FarManager()
         {
@@ -50,6 +52,7 @@ namespace Ex1
         {
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
+
             directory = new DirectoryInfo(path);
             FileSystemInfo[] fs = directory.GetFileSystemInfos();
             for (int i = 0, k = 0; i < fs.Length; i++)
@@ -63,6 +66,33 @@ namespace Ex1
                 k++;
             }
         }
+
+        public void Showcontentamount()
+        {
+            directory = new DirectoryInfo(path);
+            FileSystemInfo[] fs = directory.GetFileSystemInfos();
+            numberoffiles = 0;
+            numberoffolders = 0;
+
+            for (int i = 0, k = 0; i < fs.Length; i++)
+            {
+                if (fs[i].GetType() == typeof(DirectoryInfo)) // Everytime we get inside a directory, cursor is always at the top
+                {
+                    numberoffolders++;
+                }
+                else
+                {
+                    numberoffiles++;
+                }
+            }
+            Console.Write("Number of Files :", numberoffiles);
+            Console.Write(numberoffiles);
+            Console.WriteLine(" ");
+            Console.Write("Number of Folders :", numberoffolders);
+            Console.Write(numberoffolders);
+            Console.ReadKey();
+        }
+
         public void Up() //function for navigating up
         {
             cursor--;
@@ -78,13 +108,25 @@ namespace Ex1
 
         public void CalcSz() //function to make sure folder and all the indexes are consistent with each other
         {
+            numberoffolders = 0;
+            numberoffiles = 0;
+
             directory = new DirectoryInfo(path);
             FileSystemInfo[] fs = directory.GetFileSystemInfos();
             sz = fs.Length;
             if (ok == false)
                 for (int i = 0; i < fs.Length; i++)
                     if (fs[i].Name[0] == '.')
+                    {
+                        numberoffiles++;
                         sz--;
+                    }
+            //Console.Write("Number of Files :", numberoffiles);
+            //Console.Write(numberoffiles);
+            //Console.WriteLine(" ");
+            //Console.Write("Number of Folders :", numberoffolders);
+            //Console.Write(sz);
+            //Console.ReadKey();
         }
 
         public void Del()
@@ -185,6 +227,8 @@ namespace Ex1
                     Intxt();
                 if (consoleKey.Key == ConsoleKey.X) // if user presses up, up function plays
                     Renamer();
+                if (consoleKey.Key == ConsoleKey.C) // if user presses up, up function plays
+                    Showcontentamount();
             }
         }
 
