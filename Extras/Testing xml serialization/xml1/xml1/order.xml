@@ -1,0 +1,20 @@
+﻿<?xml version="1.0"?>
+<PurchaseOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <OrderDate>23.02.2019</OrderDate>
+  <Items>
+    <OrderItem>
+      <ItemName>Item1</ItemName>
+      <Description>Description 1</Description>
+      <UnitPrice>100</UnitPrice>
+      <Quantity>3</Quantity>
+      <Total>300</Total>
+    </OrderItem>
+    <OrderItem>
+      <ItemName>Item2</ItemName>
+      <Description>Description 2</Description>
+      <UnitPrice>123</UnitPrice>
+      <Quantity>4</Quantity>
+      <Total>492</Total>
+    </OrderItem>
+  </Items>
+</PurchaseOrder>
